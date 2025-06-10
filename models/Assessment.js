@@ -50,4 +50,7 @@ const assessmentSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Assessment', assessmentSchema);
+// Check if model already exists before creating it (prevents OverwriteModelError)
+const Assessment = mongoose.models.Assessment || mongoose.model('Assessment', assessmentSchema);
+
+module.exports = Assessment;
