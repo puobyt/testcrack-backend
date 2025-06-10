@@ -5,8 +5,19 @@ require('dotenv').config();
 
 const app = express();
 
+// CORS configuration for production
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://testcrackfrontend.vercel.app',
+    'https://*.vercel.app'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 // Middleware
-app.use(cors());
 app.use(express.json());
 
 // Simple MongoDB connection
