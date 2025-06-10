@@ -9,7 +9,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://testcrackfrontend.vercel.app',
+    'https://testcrackfrontend-5krsszcuf-paul-bobys-projects.vercel.app',
     'https://*.vercel.app'
   ],
   credentials: true,
